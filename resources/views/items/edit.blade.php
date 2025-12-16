@@ -16,6 +16,7 @@
         @csrf
         @method('PUT')
 
+        <!-- KODE -->
         <div>
             <label class="block text-sm font-medium text-gray-700 mb-1">
                 Kode Barang
@@ -28,6 +29,7 @@
                 required>
         </div>
 
+        <!-- NAMA -->
         <div>
             <label class="block text-sm font-medium text-gray-700 mb-1">
                 Nama Barang
@@ -40,6 +42,7 @@
                 required>
         </div>
 
+        <!-- KATEGORI -->
         <div>
             <label class="block text-sm font-medium text-gray-700 mb-1">
                 Kategori
@@ -57,6 +60,7 @@
             </select>
         </div>
 
+        <!-- LOKASI -->
         <div>
             <label class="block text-sm font-medium text-gray-700 mb-1">
                 Lokasi
@@ -74,6 +78,7 @@
             </select>
         </div>
 
+        <!-- STOK -->
         <div class="grid grid-cols-2 gap-4">
             <div>
                 <label class="block text-sm font-medium text-gray-700 mb-1">
@@ -100,6 +105,7 @@
             </div>
         </div> --}}
 
+        <!-- DESKRIPSI -->
         <div>
             <label class="block text-sm font-medium text-gray-700 mb-1">
                 Deskripsi
@@ -110,6 +116,7 @@
                 class="w-full rounded-lg border-gray-300 focus:ring-blue-500 focus:border-blue-500">{{ old('description', $item->description) }}</textarea>
         </div>
 
+        <!-- TOMBOL -->
         <div class="flex justify-between items-center pt-4">
             <a href="{{ route('items.index') }}"
                class="text-gray-600 hover:text-gray-800">

@@ -12,6 +12,7 @@
     <form action="{{ route('items.store') }}" method="POST" class="space-y-4">
         @csrf
 
+        {{-- <!-- KODE ITEM -->
         <div>
             <label class="block text-sm font-medium text-gray-700 mb-1">
                 Kode Item
@@ -25,6 +26,7 @@
             >
         </div> --}}
 
+        <!-- NAMA ITEM -->
         <div>
             <label class="block text-sm font-medium text-gray-700 mb-1">
                 Nama Item
@@ -38,6 +40,7 @@
             >
         </div>
 
+        <!-- KATEGORI -->
         <div>
             <label class="block text-sm font-medium text-gray-700 mb-1">
                 Kategori
@@ -56,6 +59,7 @@
             </select>
         </div>
 
+        <!-- LOKASI -->
         <div>
             <label class="block text-sm font-medium text-gray-700 mb-1">
                 Lokasi
@@ -74,6 +78,7 @@
             </select>
         </div>
 
+        <!-- STOK -->
         <div>
             <label class="block text-sm font-medium text-gray-700 mb-1">
                 Stok Awal
@@ -88,6 +93,7 @@
             >
         </div>
 
+        {{-- <!-- MIN STOK -->
         <div>
             <label class="block text-sm font-medium text-gray-700 mb-1">
                 Minimum Stok
@@ -102,6 +108,7 @@
             >
         </div> --}}
 
+        <!-- DESKRIPSI -->
         <div>
             <label class="block text-sm font-medium text-gray-700 mb-1">
                 Deskripsi
@@ -114,6 +121,7 @@
             ></textarea>
         </div>
 
+        <!-- TOMBOL -->
         <div class="flex justify-between items-center pt-4">
             <a href="{{ route('dashboard') }}"
                class="text-gray-600 hover:text-gray-800">
