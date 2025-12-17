@@ -28,6 +28,11 @@
                 Barang
             </a>
 
+            <a href="{{ route('kategori-barang.index') }}"
+                class="block px-4 py-2 rounded-lg {{ request()->routeIs('kategori-barang.*') ? 'bg-gray-800 font-semibold' : 'hover:bg-gray-800' }}">
+                Kategori Barang
+            </a>
+
             @if(auth()->user()->role === 'admin')
                 <a href="{{ route('users.index') }}"
                    class="block px-4 py-2 rounded-lg

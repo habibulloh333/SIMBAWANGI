@@ -6,7 +6,8 @@ use App\Http\Controllers\{
     DashboardController,
     UserController,
     ItemController,
-    StockLogController
+    StockLogController,
+    KategoriBarangController
 };
 
 
@@ -81,10 +82,30 @@ Route::middleware('auth')->group(function () {
         ->name('items.show');
 
 
+    Route::get('/kategori-barang', [KategoriBarangController::class, 'index'])
+        ->middleware('role:admin,petugas_gudang')
+        ->name('kategori-barang.index');
+
+    Route::post('/kategori-barang', [KategoriBarangController::class, 'store'])
+        ->middleware('role:admin,petugas_gudang')
+        ->name('kategori-barang.store');
+
+    Route::get('/kategori-barang/create', [kategoriBarangController::class, 'create'])
+        ->middleware('role:admin,petugas_gudang')
+        ->name('kategori-barang.create');
+
+    Route::get('/kategori-barang/{kategoriBarang}/edit', [KategoriBarangController::class, 'edit'])
+        ->name('kategori-barang.edit');
+
+     Route::delete('/kategori-barang/{kategoriBarang}/destroy', [KategoriBarangController::class, 'destroy'])
+        ->middleware('role:admin,petugas_gudang')
+        ->name('kategori-barang.destroy');
+
+    Route::put('/kategori-barang/{kategoriBarang}', [KategoriBarangController::class, 'update'])
+        ->name('kategori-barang.update');
+
 
     Route::post('/items', [ItemController::class, 'store'])->name('items.store');
-
-
     // Reports (All Roles)
     Route::get('/reports', [ItemController::class, 'report'])
         ->name('reports.index');
